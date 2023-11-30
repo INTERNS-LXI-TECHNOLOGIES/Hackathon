@@ -1,40 +1,68 @@
+package com.divisosoft.trainproject;
+
 public class TrainInfo{
 	
-private String name;
-private int number;
-private String fromLocation;
-private String destination;
+	private String name;
+	private int number;
+	private String fromLocation;
+	private String destination;
+
+	public TrainInfo(String name,int number,String fromLocation,String destination){
+		this.name=name;
+		this.number=number;
+		this.fromLocation= fromLocation;
+		this.destination=destination;
+	}
+	public TrainInfo(){
+		
+	}
 
 	public void setName(String name){
-		this.name;
+		this.name = name;
 	}
 	
 	public String getName(){
 		return name;
 	}
 	
-	public void setNumber(String number){
-		this.number;
+	public void setNumber(int number){
+		this.number =number ;
 	}
 	
-	public String getNumber(){
+	public int getNumber(){
 		return number;
 	}
 	
 	public void setFromLocation(String FromLocation){
-		this.FromLocation;
+		this.fromLocation=FromLocation;
 	}
 	
 	public String getFromLocation(){
-		return FromLocation;
+		return fromLocation;
 	}
 
 	public void setDestination(String destination){
-		this.destination;
+		this.destination=destination;
 	}
 	
 	public String getDestination(){
 		return destination;
-	}	
+	}
+
+	public String toString(){
+		String toString="";
+		toString= "TRAIN NAME IS : "+name+"\n TRAIN NUMBER IS : "+number+"\n STARTING STATION "+fromLocation+"\n DESTINATION : "+destination+"\n";
+		return toString;
+	}
+	
+	public boolean equals(Object obj){
+		
+		if(((TrainInfo)obj).getNumber()==this.getNumber()){
+			return true;
+		}
+		else{
+			return false;
+		}	
+	}
 	
 }
