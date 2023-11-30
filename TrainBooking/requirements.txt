@@ -1,0 +1,11 @@
+Requirements
+
+Develop a java application to search trains by train number, starting location or destination
+
+A train should contain details at least name, train number, from location, and destination
+
+Concepts to include
+
+1. Proper use of collections api(List, Set etc)
+2. Usage of Comparable or Comparator
+3. Advance use of lambda, streams etc will give you a high score
