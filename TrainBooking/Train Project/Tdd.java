@@ -8,11 +8,12 @@ public class Tdd
 {
 	public static void main(String[] args)
 	{
+		System.out.println("\t"+"Where is my train"+"\n");
 		Scanner scan = new Scanner(System.in) ;
 		
 		List<Train> trains = new ArrayList<>();
 		
-		trains.add(new Train("Venad Express",16302,"Trivandrum Cntl","Shoranur Junction"));
+		trains.add(new Train("Venad Express ",16302,"Trivandrum Cntl","Shoranur Junction"));
 		trains.add(new Train("Maveli Express",16603,"Mangalore Central","Trivandrum Cntl"));
 		trains.add(new Train("Kochuveli Express",16315,"Bangalore City Junction","Trivandrum Cntl"));
 		trains.add(new Train("Ernakulam - Kollam MEMU",66307,"Ernakulam Junction","Kollam Junction"));
@@ -25,10 +26,15 @@ public class Tdd
 		trains.add(new Train("Jan Shatabdi",12075,"Calicut","Trivandrum Central"));
 		trains.add(new Train("Netravati Express",16347,"Lokmanya Tilak Terminus","Trivandrum Central"));
 		
-		for(Train t : trains)
-		{
-			System.out.println(t);
-		}
+		System.out.println("Enter the Train Number ");
+		int number = scan.nextInt();
+		
+		List<Train> Trainno = trains.stream()
+		.filter(train ->train.getTrainNumber()==number)
+		.collect(Collectors.toList());
+		
+		Trainno.stream().forEach(train -> System.out.println(train));
+	
 	}
 }
 		

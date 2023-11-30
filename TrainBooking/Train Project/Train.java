@@ -20,7 +20,7 @@ public class Train
 	
 	public String toString()
 	{
-		String toString = "Train number : "+trainnumber+" Train Name : "+name+" From : "+fromlocation+" Destination : "+destination ;
+		String toString = "Train number  : "+trainnumber+" Train Name  : "+name+" From  : "+fromlocation+" Destination  : "+destination ;
 		return toString ;
 	}
 }
