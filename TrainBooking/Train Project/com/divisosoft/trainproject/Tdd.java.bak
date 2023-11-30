@@ -51,7 +51,7 @@ public class Tdd
 	
 				List<Train> Trainno = trains.stream()
 				.filter(train ->train.getTrainNumber()==number)
-				.collect(Collectors.toList());
+				.sorted().collect(Collectors.toList());
 	
 				Trainno.stream().forEach(train -> System.out.println(train));
 
