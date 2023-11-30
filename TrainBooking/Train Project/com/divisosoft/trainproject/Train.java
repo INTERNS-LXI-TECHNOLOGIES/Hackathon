@@ -1,3 +1,5 @@
+package com.divisosoft.trainproject ;
+
 public class Train
 {
 	String name ;

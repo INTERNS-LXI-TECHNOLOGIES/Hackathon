@@ -1,3 +1,4 @@
+package com.divisosoft.trainproject ;
 import java.util.List ;
 import java.util.ArrayList ;
 import java.util.stream.Stream ;
@@ -26,15 +27,50 @@ public class Tdd
 		trains.add(new Train("Jan Shatabdi",12075,"Calicut","Trivandrum Central"));
 		trains.add(new Train("Netravati Express",16347,"Lokmanya Tilak Terminus","Trivandrum Central"));
 		
-		System.out.println("Enter the Train Number ");
-		int number = scan.nextInt();
+		boolean choice = true ;
+		while(choice)
+		{
+			System.out.println(" ");
+			System.out.println("Press 1 : View Trains");
+			System.out.println("Press 2 : Search Trains");
+			System.out.println("Press 3 : Exit");
+			int press = scan.nextInt();
 		
-		List<Train> Trainno = trains.stream()
-		.filter(train ->train.getTrainNumber()==number)
-		.collect(Collectors.toList());
-		
-		Trainno.stream().forEach(train -> System.out.println(train));
+		switch(press)
+		{
+			case 1 :
+				for(Train train : trains)
+				{
+					System.out.println(train);
+				}
+			break ;
+			
+			case 2 :
+				System.out.println("Enter the Train Number ");
+				int number = scan.nextInt();
 	
+				List<Train> Trainno = trains.stream()
+				.filter(train ->train.getTrainNumber()==number)
+				.sorted().collect(Collectors.toList());
+	
+				Trainno.stream().forEach(train -> System.out.println(train));
+
+				if(Trainno.isEmpty())
+				{
+					System.out.println("Train is not found");
+				}
+			break ;
+			
+			case 3 :
+				System.out.println("Ok thank you");
+				choice = false ;
+			break ;
+			
+			default :
+				System.out.println("Sorry... Something went wrong");
+		}
+		}
+		
 	}
 }
 		
